@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM  from "react-dom/client";
+
 const parent = React.createElement("div", {
     id: "parent"
 }, [
@@ -9,7 +12,7 @@ const parent = React.createElement("div", {
             React.createElement("h1", {
                 id: "heading1",
                 key: 1,
-            }, "Hello world from nested h1 tag"),
+            }, "Hello world from parcel"),
             React.createElement("h2", {
                 id: "heading2",
                 key: 2,
@@ -32,6 +35,5 @@ const parent = React.createElement("div", {
         ],
     )]
 )
-console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
