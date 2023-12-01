@@ -1,21 +1,27 @@
-import "../styles/header.css"
-import { LOGO } from "../utils/constant"
+// Header.js
+import React from 'react';
+import '../styles/header.css'; // Importing the CSS file for styling
+import { LOGO } from '../utils/constant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+
 const Header = () => {
     return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src={LOGO}></img>
+        <header className="header">
+            <div className="logo">
+                <img src={LOGO} alt="Logo" />
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
+            <div className="search-bar">
+                <input type="text" placeholder="Search for restaurant and food" />
+                <button className="search-button">
+                    <FontAwesomeIcon icon={faSearch} />
+                </button>
             </div>
+            <div className="profile">
+                <FontAwesomeIcon icon={faUser} />
+            </div>
+        </header>
+    );
+};
 
-        </div>
-    )
-}
-export default Header
+export default Header;
