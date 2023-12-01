@@ -1,0 +1,46 @@
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    display: block;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.card-rating-cost-for-two {
+    margin: 4px 0;
+    font-size: 16px;
+    color: #080707;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}

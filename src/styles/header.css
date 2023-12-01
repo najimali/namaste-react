@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav-items {
+    padding: 0px 20px;
+}
+
+.nav-items>ul {
+    display: flex;
+    list-style-type: none;
+    padding: 5px 20px;
+}
+
+.nav-items>ul>li {
+    padding: 10px;
+    margin: 10px;
+}
