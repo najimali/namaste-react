@@ -1,17 +1,15 @@
-/* Header.css */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 2rem 3rem;
     background-color: #fff;
-    height: 60px;
+    height: 5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 60px;
-    /* Adjust size as needed */
+    height: 3.9rem;
 }
 
 .search-bar {
@@ -21,6 +19,7 @@
 }
 
 .search-bar input {
+    width: 300px;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ddd;
@@ -29,12 +28,12 @@
 
 .search-button {
     background-color: #f8f8f8;
+    border-radius: 50%;
     border: none;
     padding: 10px;
     cursor: pointer;
 }
 
-.profile img {
-    height: 40px;
-    /* Adjust size as needed */
+.profile {
+    background-color: #f8f8f8;
 }
