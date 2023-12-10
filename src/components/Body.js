@@ -2,7 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import "../styles/body.css"
 import useFetch from "../hooks/useFetch";
 import { SWIGGY_RESTAURANT_API_END_POINT } from "../utils/constant";
-import RestaurantCardShimmer from "./ResturantCardShimmer"
+import RestaurantCardShimmer from "./RestaurantCardShimmer"
 const restaurantCardShimmerArray = new Array(16).fill(null);
 const Body = () => {
     const { data: restaurants, loading } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
