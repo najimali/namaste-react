@@ -1,16 +1,22 @@
-.simmer-card {
+.shimmer-card {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: self-start;
-    width: 20rem;
-    height: 15rem;
-    background-color: #fff;
-    border-radius: 4px;
+    width: 300px;
+    height: 350px;
     overflow: hidden;
-    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
     margin: 2rem;
-    border: 1px solid #faf5f5;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.shimmer-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .shimmer-loader-1 {
