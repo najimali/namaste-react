@@ -5,18 +5,7 @@ import { SWIGGY_RESTAURANT_API_END_POINT } from "../utils/constant";
 import RestaurantCardShimmer from "./RestaurantCardShimmer"
 const restaurantCardShimmerArray = new Array(16).fill(null);
 const Body = () => {
-    const { data: restaurants, loading } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
-
-    if (loading) {
-        return (
-            <div className="body">
-                <div className="restaurant-container">
-                    {restaurantCardShimmerArray.map((_, index) => <RestaurantCardShimmer key={index} />)}
-                </div>
-            </div>
-
-        )
-    }
+    const { data: restaurants } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
     return (
         <div className="body">
             <div className="restaurant-container">
