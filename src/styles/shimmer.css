@@ -1,0 +1,43 @@
+.simmer-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: self-start;
+    width: 20rem;
+    height: 15rem;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 2rem;
+    border: 1px solid #faf5f5;
+}
+
+.shimmer-loader-1 {
+    border-radius: 5%;
+    width: 50%;
+    height: 10%;
+    margin: 1rem;
+    opacity: .7;
+    animation: shimmer-animation 1s linear infinite alternate forwards;
+}
+
+.shimmer-loader-2 {
+    border-radius: 5%;
+    width: 80%;
+    background-color: rgb(243, 236, 236);
+    margin: 1rem;
+    opacity: .7;
+    height: 45%;
+    animation: shimmer-animation 1s linear infinite alternate forwards;
+}
+
+@keyframes shimmer-animation {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}

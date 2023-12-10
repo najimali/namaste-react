@@ -1,10 +1,6 @@
 import "../styles/restaurant-card.css"
 import { CLOUDINARY__IMAGE_PREFIX } from "../utils/constant";
 
-const handleCusines = (cuisines) => {
-    const cuisinesString = cuisines?.join(",")
-    return cuisinesString.length > 40 ? `${cuisinesString.substring(0, 40)}...` : cuisinesString
-}
 const RestaurantCard = ({ restaurant }) => {
     const { id, name, cloudinaryImageId, costForTwo, cuisines, avgRating, sla: { deliveryTime } } = restaurant
     return (
