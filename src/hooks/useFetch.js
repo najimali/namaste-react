@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { API_ACTIONS } from "../utils/constant";
+import { apiActions } from "../utils/constant";
 import axios from "axios";
 
 const initialState = {
@@ -9,11 +9,11 @@ const initialState = {
 };
 const reducer = (state, { type, payload }) => {
   switch (type) {
-    case API_ACTIONS.FETCH_DATA:
+    case apiActions.FETCH_DATA:
       return { ...state, loading: true };
-    case API_ACTIONS.SET_DATA:
+    case apiActions.SET_DATA:
       return { ...state, data: payload, loading: false };
-    case API_ACTIONS.SET_ERROR:
+    case apiActions.SET_ERROR:
       return { ...state, loading: false, error: payload };
     default:
       state;
@@ -25,14 +25,14 @@ const useFetch = (url) => {
     const cancelSource = axios.CancelToken.source();
     const fetchData = async () => {
       try {
-        dispatch({ type: API_ACTIONS.FETCH_DATA });
+        dispatch({ type: apiActions.FETCH_DATA });
         const response = await axios.get(url, {
           cancelToken: cancelSource.token,
         });
-        dispatch({ type: API_ACTIONS.SET_DATA, payload: response?.data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants });
+        dispatch({ type: apiActions.SET_DATA, payload: response?.data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants });
       } catch (error) {
         if (!axios.isCancel(error)) {
-          dispatch({ type: API_ACTIONS.SET_ERROR, payload: error });
+          dispatch({ type: apiActions.SET_ERROR, payload: error });
         }
       }
     };
