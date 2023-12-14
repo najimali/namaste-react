@@ -1,12 +1,12 @@
-// Header.js
 import React, { useEffect, useState } from 'react';
-import '../styles/header.css'; // Importing the CSS file for styling
+import '../styles/header.css';
 import { DEBOUNCE_DELAYS, LOGO } from '../utils/constant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { debounce } from '../utils/debounce';
 import { setText } from '../reducer/searchTextSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -24,7 +24,10 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <img src={LOGO} alt="Logo" />
+                <Link to="/">
+                    <img src={LOGO} alt="Logo" />
+                </Link>
+
             </div>
             <div className="search-bar">
                 <input
@@ -33,13 +36,21 @@ const Header = () => {
                     value={searchTerm}
                     onChange={(event) => handleSearchTextChange(event)}
                 />
-                <button className="search-button">
-                    <FontAwesomeIcon icon={faSearch} />
-                </button>
             </div>
-            <div className="profile">
-                <FontAwesomeIcon icon={faUser} />
+            <div className='nav-container'>
+                <div className='nav-items'>
+                    <Link to="/about" className='link'>About</Link>
+                </div>
+                <div className='nav-items'>
+                    <Link to="/contact" className='link'>Contact Me</Link>
+                </div>
+                <div className="profile nav-items">
+                    <FontAwesomeIcon icon={faUser} />
+                </div>
             </div>
+
+
+
         </header>
     );
 };

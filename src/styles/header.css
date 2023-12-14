@@ -3,9 +3,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem 3rem;
+    width: 100%;
     background-color: #fff;
     height: 5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 20%;
 }
 
 .logo img {
@@ -13,8 +18,8 @@
 }
 
 .search-bar {
+
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 
@@ -35,5 +40,31 @@
 }
 
 .profile {
-    background-color: #f8f8f8;
+    border-radius: 40%;
+    background-color: #fff;
+    border: none;
+}
+
+.nav-container {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.nav-items {
+    padding: .5rem 1rem;
+    margin: 1rem 0rem;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-family: 'Arial', sans-serif;
+    color: #0a0a0a;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #A28089;
 }
