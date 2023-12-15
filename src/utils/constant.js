@@ -16,3 +16,7 @@ export const DEBOUNCE_DELAYS = {
     WINDOW_RESIZE: 300,  // 300ms for window resize events
     TYPEAHEAD: 250       // 250ms for typeahead suggestions
 };
+
+export const categoryType = {
+    ITEM_CATEGORY: 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+}
