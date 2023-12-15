@@ -1,0 +1,61 @@
+.menu-item-shimmer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    padding: 2rem;
+    width: 40rem;
+    height: 10rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.menu-item-shimmer-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item-shimmer-content-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.menu-item-name-shimmer-loader {
+    border-radius: 2%;
+    width: 10rem;
+    height: 1.5rem;
+    padding: 5px;
+    margin: 5px;
+    animation: menu-item-shimmer-animation 1s linear infinite alternate forwards;
+}
+
+.menu-item-cusines-shimmer-loader {
+    border-radius: 2%;
+    width: 20rem;
+    height: 1rem;
+    padding: 5px;
+    margin: 15px 5px;
+    animation: menu-item-shimmer-animation 1s linear infinite alternate forwards;
+}
+
+.menu-item-image-shimmer-loader {
+    border-radius: 5%;
+    width: 6rem;
+    height: 5rem;
+    padding: 5px;
+    margin: 15px 5px;
+    animation: menu-item-shimmer-animation 1s linear infinite alternate forwards;
+}
+
+@keyframes menu-item-shimmer-animation {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}

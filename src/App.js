@@ -12,6 +12,7 @@ import {
   Outlet
 } from "react-router-dom";
 import Contact from "./components/Contact";
+import RestaurantDetail from "./components/RestaurantDetail";
 
 const AppLayout = () => {
   return (
@@ -34,6 +35,10 @@ const routerConfig = createBrowserRouter([
       {
         path: "/",
         element: < Body />
+      },
+      {
+        path: "/restaurants/:id",
+        element: < RestaurantDetail />
       },
       {
         path: "/about",

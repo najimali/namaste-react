@@ -6,8 +6,10 @@ import RestaurantCardShimmer from "./RestaurantCardShimmer"
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 const restaurantCardShimmerArray = new Array(16).fill(null);
+
 const Body = () => {
-    const { data: restaurants } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
+    const { data } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
+    const restaurants = data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     const [filterRestaurants, setFilteredRestaurants] = useState(null)
     const searchText = useSelector((state) => state.search.text);
     useEffect(() => {
@@ -35,7 +37,7 @@ const Body = () => {
         <div className="body">
             <div className="restaurant-container">
                 {
-                    filterRestaurants ? filterRestaurants?.map(({ info }) => (<RestaurantCard restaurant={info} />))
+                    filterRestaurants ? filterRestaurants?.map(({ info }) => (<RestaurantCard restaurant={info} key={info.id}/>))
                         : restaurantCardShimmerArray.map((_, index) => <RestaurantCardShimmer key={index} />)}
             </div>
         </div>
