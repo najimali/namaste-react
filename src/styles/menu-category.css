@@ -1,0 +1,31 @@
+.menu-category-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40rem;
+    padding: 2rem;
+    transition: color 0.5s ease;
+    border-bottom: 16px solid #f1f1f6;
+}
+
+.menu-category-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-category-content:hover {
+    cursor: pointer;
+}
+
+.menu-category-content-title {
+    color: #3e4152;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.menu-category-content-icon {
+    color: #3e4152;
+    font-weight: 400;
+    font-size: .9rem;
+}

@@ -3,7 +3,7 @@ import "../styles/menu-item.css"
 import { CLOUDINARY__IMAGE_PREFIX, NON_VEG_ICON_IMAGE, VEG_ICON_IMAGE } from "../utils/constant"
 
 const MenuItem = ({ detail }) => {
-    const { id, name, description, imageId, isVeg, price, defaultPrice, ratings: { aggregatedRating: { rating } } } = detail
+    const { id, name, description, imageId, isVeg, price, defaultPrice } = detail
     return (
         <div className="menu-item-container">
             <div className="menu-item-content">
@@ -17,9 +17,12 @@ const MenuItem = ({ detail }) => {
                     <span>&#8377;</span> {(price || defaultPrice)  / 100}</p>
                 <p className="description"> {description}</p>
             </div>
-            <div className="image-cart-container">
+            <div className="menu-item-container-image-container">
                 <div>
-                    <img src={`${CLOUDINARY__IMAGE_PREFIX}${imageId}`} alt="Food item" className="menu-item-image" />
+                    <button>
+                        Add
+                    </button>
+                    <img src={`${CLOUDINARY__IMAGE_PREFIX}${imageId}`} alt="Food item"/>
                 </div>
                 <div className="customisable">Customisable</div>
             </div>

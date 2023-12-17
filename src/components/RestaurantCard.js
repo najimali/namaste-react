@@ -17,7 +17,7 @@ const RestaurantCard = ({ restaurant }) => {
                         <span>{costForTwo}</span>
                     </div>
                     <p className="card-subtitle">{deliveryTime} mins</p>
-                    <p className="card-subtitle">{cuisines?.join(",")}</p>
+                    <p className="card-subtitle">{cuisines?.join(", ")}</p>
                 </div>
             </Link>
         </div>

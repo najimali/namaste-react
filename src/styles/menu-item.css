@@ -2,70 +2,91 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem;
-    padding: 2rem;
-    width: 40rem;
+    width: 100%;
     height: 10rem;
-    border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(230, 226, 226);
     overflow: hidden;
 }
 
-.menu-item-container:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.menu-item-container:last-child {
+    border-bottom: none;
 }
 
 .vegImage {
     width: 1rem;
     height: 1rem;
-    margin: 0px 1rem;
+    margin: 2px 0rem;
 }
 
 .nonVegImage {
     width: 1rem;
     height: 1rem;
-    margin: 0px 1rem;
+    margin: 2px 0rem;
 }
 
 .name {
-    font-size: 1.22rem;
-    font-weight: 500;
-    color: #3e4152;
     font-family: 'Arial', sans-serif;
     transition: color 0.3s ease;
-    padding: 2px 1rem;
+    padding: 2px 0rem;
+    font-size: 1.22rem;
+    font-weight: 600;
+    color: #3e4152;
+    word-break: break-word;
 }
 
 .price {
     font-size: .75rem;
-    font-weight: 400;
+    font-weight: 300;
     font-family: 'Arial', sans-serif;
-    color: #3e4152;
+    /* color: #3e4152; */
     transition: color 0.3s ease;
-    padding: 2px 1rem;
+    padding: 2px 0rem;
 }
 
 .description {
-    font-size: .75rem;
+    font-size: .6rem;
     font-weight: 200;
+    line-height: 1.3;
+    color: rgba(40, 44, 63, .45);
     font-family: 'Arial', sans-serif;
-    color: #8b8787;
     transition: color 0.3s ease;
-    padding: 2px 1rem;
+    padding: 2px 0rem;
 }
 
-.image-cart-container {
+.menu-item-container-image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
 }
 
-.menu-item-image {
-    border-radius: 8px;
+.menu-item-container-image-container img {
+    background-blend-mode: overlay;
+    object-fit: cover;
+    border-radius: 6px;
     width: 7rem;
     height: 5rem;
+}
+
+.menu-item-container-image-container button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #60b246;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.menu-item-container-image-container button:hover {
+    background-color: #f2f7f2;
 }
 
 .customisable {
