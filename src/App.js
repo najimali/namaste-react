@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestaurantDetail from "./components/RestaurantDetail";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   return (
@@ -47,7 +48,11 @@ const routerConfig = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />
-      }
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
     ]
 
   },

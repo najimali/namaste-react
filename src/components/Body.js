@@ -11,7 +11,7 @@ const Body = () => {
     const { data } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
     const restaurants = data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     const [filterRestaurants, setFilteredRestaurants] = useState(null)
-    const searchText = useSelector((state) => state.search.text);
+    const searchText = useSelector((store) => store.search.text);
     useEffect(() => {
         if (restaurants?.length) {
             setFilteredRestaurants(restaurants)

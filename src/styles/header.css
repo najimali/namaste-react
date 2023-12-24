@@ -55,6 +55,7 @@
 .nav-items {
     padding: .5rem 1rem;
     margin: 1rem 0rem;
+    position: relative;
 }
 
 .link {
@@ -67,4 +68,20 @@
 
 .link:hover {
     color: #A28089;
+}
+
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -3px;
+    right: -1px;
+    background: #ff0000;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: .9rem;
 }

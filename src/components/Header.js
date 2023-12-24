@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import '../styles/header.css';
 import { DEBOUNCE_DELAYS, LOGO } from '../utils/constant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faContactBook, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { debounce } from '../utils/debounce';
 import { setText } from '../reducer/searchTextSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -21,6 +21,8 @@ const Header = () => {
         debounceSearchText();
         return () => debounceSearchText.cancel();
     }, [searchTerm]);
+
+    const cartItems = useSelector(store => store.cart.items)
     return (
         <header className="header">
             <div className="logo">
@@ -38,19 +40,24 @@ const Header = () => {
                 />
             </div>
             <div className='nav-container'>
+
                 <div className='nav-items'>
-                    <Link to="/about" className='link'>About</Link>
+                    <Link to="/contact" className='link' icon={faContactBook}>
+                        <FontAwesomeIcon icon={faPhone} />
+                    </Link>
                 </div>
                 <div className='nav-items'>
-                    <Link to="/contact" className='link'>Contact Me</Link>
+                    <Link to="/cart" className='link' icon={faContactBook}>
+                        <FontAwesomeIcon className='cart-icon-container' icon={faCartShopping} />
+                        <span className="cart-count">{cartItems.length}</span>
+                    </Link>
                 </div>
-                <div className="profile nav-items">
-                    <FontAwesomeIcon icon={faUser} />
+                <div className='nav-items'>
+                    <Link to="/about" className='link'>
+                        <FontAwesomeIcon icon={faUser} />
+                    </Link>
                 </div>
             </div>
-
-
-
         </header>
     );
 };
