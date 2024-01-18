@@ -1,0 +1,66 @@
+/* BillDetails.css */
+.bill-container {
+  margin-top: 4rem;
+  background-color: #fff;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  color: #1c1c1c;
+}
+
+.bill-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.bill-content {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 16px;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+}
+
+.bill-row .total {
+  font-weight: bold;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 8px;
+}
+
+.delivery-info {
+  display: flex;
+  align-items: center;
+}
+
+.original-price {
+  text-decoration: line-through;
+  /* This creates the strike-through effect */
+  margin-right: 4px;
+  /* Adds spacing between the crossed price and 'FREE' */
+}
+
+.free-text {
+  /* Your existing styles */
+  background-color: #1a73e8;
+  /* Or your highlight color */
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.bill-row span {
+  display: flex;
+  align-items: center;
+}
+
+.bill-row span .svg-inline--fa {
+  margin-right: 8px;
+  /* Adds spacing between the icon and the text */
+}

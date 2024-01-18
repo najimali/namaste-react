@@ -1,0 +1,65 @@
+.cart-container {
+    position: fixed;
+    /* Fixed position to stay in place during scrolling */
+    top: 0;
+    /* Align to the top of the viewport */
+    right: 0;
+    /* Set a width for the container */
+    height: 100vh;
+    /* Full height of the viewport */
+    background-color: #fff;
+    /* Light grey background */
+    border-left: 1px solid #ccc;
+    /* Add a left border */
+    overflow-y: auto;
+    /* Enable scrolling for overflow content */
+    z-index: 1000;
+    /* Ensure it's above other content */
+    width: 32rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 8px;
+    justify-content: start;
+    overflow: scroll;
+    padding: 1rem 2rem;
+}
+
+.my-cart {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cart-close {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.cart-close:hover {
+    cursor: pointer;
+}
+
+.billing-section {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.billing-section .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .3rem 0;
+    width: 100%;
+
+}
+
+.billing-section .row .first-box {
+    display: flex;
+    justify-content: space-between;
+}

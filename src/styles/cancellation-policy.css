@@ -1,0 +1,21 @@
+.cancellation-container {
+    margin-top: 4rem;
+    background-color: #fff;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    color: #1c1c1c;
+}
+
+.cancellation-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.cancellation-content {
+    padding-top: 16px;
+    opacity: .8;
+    font-size: 1rem;
+}

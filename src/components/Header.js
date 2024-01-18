@@ -7,6 +7,7 @@ import { debounce } from '../utils/debounce';
 import { setText } from '../reducer/searchTextSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { toggleCart } from '../reducer/cartSlice';
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -21,7 +22,9 @@ const Header = () => {
         debounceSearchText();
         return () => debounceSearchText.cancel();
     }, [searchTerm]);
-
+    const handleToggleCart = () => {
+        dispatch(toggleCart())
+    }
     const cartItems = useSelector(store => store.cart.items)
     return (
         <header className="header">
@@ -46,16 +49,12 @@ const Header = () => {
                         <FontAwesomeIcon icon={faPhone} />
                     </Link>
                 </div>
-                <div className='nav-items'>
-                    <Link to="/cart" className='link' icon={faContactBook}>
-                        <FontAwesomeIcon className='cart-icon-container' icon={faCartShopping} />
-                        <span className="cart-count">{cartItems.length}</span>
-                    </Link>
+                <div className='nav-items' onClick={handleToggleCart}>
+                    <FontAwesomeIcon className='cart-icon-container' icon={faCartShopping}/>
+                    <span className="cart-count">{cartItems?.length || 0}</span>
                 </div>
                 <div className='nav-items'>
-                    <Link to="/about" className='link'>
-                        <FontAwesomeIcon icon={faUser} />
-                    </Link>
+                    <FontAwesomeIcon icon={faUser} />
                 </div>
             </div>
         </header>

@@ -9,7 +9,7 @@ const restaurantCardShimmerArray = new Array(16).fill(null);
 
 const Body = () => {
     const { data } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
-    const restaurants = data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    const restaurants = data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     const [filterRestaurants, setFilteredRestaurants] = useState(null)
     const searchText = useSelector((store) => store.search.text);
     useEffect(() => {
@@ -37,7 +37,7 @@ const Body = () => {
         <div className="body">
             <div className="restaurant-container">
                 {
-                    filterRestaurants ? filterRestaurants?.map(({ info }) => (<RestaurantCard restaurant={info} key={info.id}/>))
+                    filterRestaurants ? filterRestaurants?.map(({ info }) => (<RestaurantCard restaurant={info} key={info.id} />))
                         : restaurantCardShimmerArray.map((_, index) => <RestaurantCardShimmer key={index} />)}
             </div>
         </div>

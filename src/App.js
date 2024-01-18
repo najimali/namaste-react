@@ -4,7 +4,7 @@ import "../index.css";
 import Header from "./components/Header";
 import About from "./components/About"
 import Body from "./components/Body";
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import { store } from "./reducer/store"
 import {
   createBrowserRouter,
@@ -16,13 +16,15 @@ import RestaurantDetail from "./components/RestaurantDetail";
 import Cart from "./components/Cart";
 
 const AppLayout = () => {
+  const isCartVisible = useSelector(store => store.cart.isVisible)
   return (
-    <Provider store={store}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </Provider>
+
+    <div className="app">
+      <Header />
+      <Outlet />
+      {isCartVisible && <Cart />}
+    </div>
+
 
   )
 
@@ -31,7 +33,7 @@ const routerConfig = createBrowserRouter([
 
   {
     path: "/",
-    element: <AppLayout />,
+    element: <Provider store={store}> <AppLayout /> </Provider>,
     children: [
       {
         path: "/",
@@ -49,16 +51,12 @@ const routerConfig = createBrowserRouter([
         path: "/contact",
         element: <Contact />
       },
-      {
-        path: "/cart",
-        element: <Cart />
-      },
     ]
 
   },
   {
     path: "/*",
-    element: <AppLayout />
+    element: <Provider store={store}> <AppLayout /> </Provider>
   },
 ])
 const root = ReactDOM.createRoot(document.getElementById("root"))
