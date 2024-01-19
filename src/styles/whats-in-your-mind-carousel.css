@@ -1,0 +1,38 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80rem;
+    height: 20rem;
+    margin: 1rem auto;
+}
+
+.carousel-container .header {
+    font-size: 2rem;
+    font-weight: 500;
+    box-shadow: none;
+    padding-left: 1rem;
+}
+
+.carousel-container .content {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    height: 300px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.carousel-container .content::-webkit-scrollbar {
+    display: none;
+    object-fit: cover;
+}
+
+.carousel-container .image img {
+    width: 8rem;
+    height: 10rem;
+    overflow: clip;
+    object-fit: cover;
+    border-style: none;
+}

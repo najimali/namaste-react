@@ -14,7 +14,7 @@ const RestaurantDetail = ({ }) => {
     const { data } = useFetch(url)
     const [menuItemCatgory, setMenuItemCategory] = useState(null)
     const [showIndex, setShowIndex] = useState(0)
-
+    
     useEffect(() => {
         if (data) {
             const itemCategory = data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(({ card: { card } }) => {
