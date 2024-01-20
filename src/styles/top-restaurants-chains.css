@@ -1,0 +1,84 @@
+.top-restaurants {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80rem;
+    height: 25rem;
+    margin: 1rem auto;
+    border-bottom: 1px solid rgb(230, 226, 226);
+}
+
+.top-restaurants .header {
+    color: rgba(2, 6, 12, 0.92);
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: none;
+    padding-left: 1rem;
+}
+
+.top-restaurants .content {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px;
+}
+
+.top-restaurants .content::-webkit-scrollbar {
+    display: none;
+    object-fit: cover;
+}
+
+.top-restaurants-card {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+}
+
+.top-restaurants-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.top-restaurants-card .card-image {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: block;
+}
+
+.top-restaurants-card .card-content {
+    padding: 16px;
+}
+
+.top-restaurants-card .card-title {
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.top-restaurants-card .card-rating-cost-for-two {
+    margin: 4px 0;
+    font-size: 16px;
+    color: #080707;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-restaurants-card .star-rating {
+    width: 2.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-restaurants-card .card-subtitle {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}

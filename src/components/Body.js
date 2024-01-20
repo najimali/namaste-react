@@ -6,12 +6,15 @@ import RestaurantCardShimmer from "./RestaurantCardShimmer"
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import WhatInYourMindCarousel from "./WhatInYourMindCarousel";
+import TopRestaurantsChains from "./TopRestaurantsChains";
 const restaurantCardShimmerArray = new Array(16).fill(null);
 
 const Body = () => {
     const { data } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
-    const restaurants = data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     const carouselData = data?.cards[0]
+    const topRestaurantsChains = data?.cards[1]
+    const restaurants = data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+
     const [filterRestaurants, setFilteredRestaurants] = useState(null)
     const searchText = useSelector((store) => store.search.text);
     useEffect(() => {
@@ -39,6 +42,9 @@ const Body = () => {
         <div className="body">
             <WhatInYourMindCarousel
                 data={carouselData}
+            />
+            <TopRestaurantsChains
+                data={topRestaurantsChains}
             />
             <div className="restaurant-container">
                 {
