@@ -1,6 +1,6 @@
 .restaurant-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 80rem;
@@ -20,4 +20,5 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: center;
 }

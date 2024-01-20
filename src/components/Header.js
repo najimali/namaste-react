@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/header.css';
-import { DEBOUNCE_DELAYS, LOGO } from '../utils/constant';
+import { DEBOUNCE_DELAYS } from '../utils/constant';
+import logoPath from "../assets/LocalBitesLogo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faContactBook, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { debounce } from '../utils/debounce';
@@ -30,7 +31,7 @@ const Header = () => {
         <header className="header">
             <div className="logo">
                 <Link to="/">
-                    <img src={LOGO} alt="Logo" />
+                    <img src={logoPath} alt="Logo" />
                 </Link>
 
             </div>
