@@ -36,7 +36,6 @@ export const cartSlice = createSlice({
             state.isVisible = !state.isVisible
         },
         increaseQuantity: (state, action) => {
-            console.log(action.payload);
             const itemId  = action.payload;
             const item = state.items.find(({ id }) => id === itemId);
             if (item) {

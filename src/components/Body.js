@@ -11,8 +11,9 @@ const restaurantCardShimmerArray = new Array(16).fill(null);
 
 const Body = () => {
     const { data } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
-    const carouselData = data?.cards[0]
+    const whatsInYourMindData = data?.cards[0]
     const topRestaurantsChains = data?.cards[1]
+    const title = data?.cards[2]?.card?.card?.title
     const restaurants = data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
 
     const [filterRestaurants, setFilteredRestaurants] = useState(null)
@@ -41,15 +42,22 @@ const Body = () => {
     return (
         <div className="body">
             <WhatInYourMindCarousel
-                data={carouselData}
+                data={whatsInYourMindData}
             />
             <TopRestaurantsChains
                 data={topRestaurantsChains}
             />
             <div className="restaurant-container">
-                {
-                    filterRestaurants ? filterRestaurants?.map(({ info }) => (<RestaurantCard restaurant={info} key={info.id} />))
-                        : restaurantCardShimmerArray.map((_, index) => <RestaurantCardShimmer key={index} />)}
+                <div className="header">
+                    {title}
+                </div>
+                <div className="content">
+                    {
+                        filterRestaurants ? filterRestaurants?.map(({ info }) => (<RestaurantCard restaurant={info} key={info.id} />))
+                            : restaurantCardShimmerArray.map((_, index) => <RestaurantCardShimmer key={index} />)
+                    }
+                </div>
+
             </div>
         </div>
 
