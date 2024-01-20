@@ -19,5 +19,6 @@ export const DEBOUNCE_DELAYS = {
 };
 
 export const categoryType = {
-    ITEM_CATEGORY: 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    ITEM_CATEGORY: 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory',
+    NESTED_ITEM_CATEGORY : 'type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory'
 }

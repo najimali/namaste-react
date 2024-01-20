@@ -18,7 +18,7 @@ const RestaurantDetail = ({ }) => {
     useEffect(() => {
         if (data) {
             const itemCategory = data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(({ card: { card } }) => {
-                return card['@type'] === categoryType.ITEM_CATEGORY
+                return card['@type'] === categoryType.ITEM_CATEGORY || card['@type'] === categoryType.NESTED_ITEM_CATEGORY
             });
             setMenuItemCategory(itemCategory)
         }

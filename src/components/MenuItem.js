@@ -5,7 +5,7 @@ import { CLOUDINARY__IMAGE_PREFIX, NON_VEG_ICON_IMAGE, VEG_ICON_IMAGE } from "..
 import { addItem } from '../reducer/cartSlice'
 
 const MenuItem = ({ detail }) => {
-    const { id, name, description, imageId, isVeg, price, defaultPrice } = detail
+    const { name, description, imageId, isVeg, price, defaultPrice } = detail
     const dispatch = useDispatch()
     const handleClickOnAdd = () => {
         dispatch(addItem(detail))

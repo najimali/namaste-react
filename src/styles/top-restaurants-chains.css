@@ -19,7 +19,7 @@
 
 .top-restaurants .content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 80rem;
     overflow-x: auto;
     overflow-y: hidden;

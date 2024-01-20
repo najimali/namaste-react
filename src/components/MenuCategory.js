@@ -4,7 +4,8 @@ import MenuItem from "./MenuItem"
 import "../styles/menu-category.css"
 
 const MenuCategory = ({ data, showItemsList, onCategoryClick }) => {
-    const { title, itemCards } = data
+    const { title } = data
+    const itemCards = data?.itemCards || data?.categories[0]?.itemCards || []
     return (
         <div className="menu-category-container">
             <div className="menu-category-content" onClick={onCategoryClick}>
