@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import "../styles/body.css"
 import useFetch from "../hooks/useFetch";
-import { SWIGGY_RESTAURANT_API_END_POINT } from "../utils/constant";
+import { DEFAULT_LAT_LANG, SWIGGY_RESTAURANT_API_END_POINT } from "../utils/constant";
 import RestaurantCardShimmer from "./RestaurantCardShimmer"
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -10,14 +10,23 @@ import TopRestaurantsChains from "./TopRestaurantsChains";
 const restaurantCardShimmerArray = new Array(16).fill(null);
 
 const Body = () => {
-    const { data } = useFetch(SWIGGY_RESTAURANT_API_END_POINT)
+    const [restaurantUrl, setRestaurantUrl]  = useState(`${SWIGGY_RESTAURANT_API_END_POINT}${DEFAULT_LAT_LANG}`)
+    const { data } = useFetch(restaurantUrl)
     const whatsInYourMindData = data?.cards[0]
     const topRestaurantsChains = data?.cards[1]
     const title = data?.cards[2]?.card?.card?.title
     const restaurants = data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-
+    
     const [filterRestaurants, setFilteredRestaurants] = useState(null)
     const searchText = useSelector((store) => store.search.text);
+    const currentAddress = useSelector((store) => store.location.address);
+    useEffect(() => {
+        if (currentAddress?.geometry) {
+            const { geometry : { location: { lat, lng } } } = currentAddress
+            const newUrl = `${SWIGGY_RESTAURANT_API_END_POINT}&lat=${lat}&lng=${lng}`
+            setRestaurantUrl(newUrl)
+        }
+    }, [currentAddress])
     useEffect(() => {
         if (restaurants?.length) {
             setFilteredRestaurants(restaurants)

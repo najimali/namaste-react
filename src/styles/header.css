@@ -86,6 +86,16 @@
     padding: 2px 6px;
     font-size: .9rem;
 }
+.location {
+    font-size: 15px;
+    display: block;
+    padding-left: 5px;
+    margin-left: 5px;
+    color: #686b78;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 .location .svg-inline--fa {
     margin-left: 8px;

@@ -9,6 +9,7 @@ import { setText } from '../reducer/searchTextSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggleCart } from '../reducer/cartSlice';
+import { toggleLocation } from '../reducer/locationSlice';
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -19,7 +20,6 @@ const Header = () => {
     const debounceSearchText = debounce(() => {
         dispatch(setText(searchTerm))
     }, DEBOUNCE_DELAYS.SEARCH_INPUT);
-    
     useEffect(() => {
         debounceSearchText();
         return () => debounceSearchText.cancel();
@@ -28,18 +28,15 @@ const Header = () => {
         dispatch(toggleCart())
     }
     const cartItems = useSelector(store => store.cart.items)
+    const address = useSelector(store => store.location.address)
     return (
         <header className="header">
             <div className="logo">
-                <div>
                     <Link to="/">
                         <img src={logoPath} alt="Logo" />
                     </Link>
-                </div>
-
-                <div className='location'>
-                    
-                    <span>Current Location</span>
+                <div className='location' onClick={() => dispatch(toggleLocation())}>
+                    <span>{address?.formatted_address}</span>
                     <FontAwesomeIcon icon={faArrowDown} />
                 </div>
             </div>
