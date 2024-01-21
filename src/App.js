@@ -14,15 +14,18 @@ import {
 import Contact from "./components/Contact";
 import RestaurantDetail from "./components/RestaurantDetail";
 import Cart from "./components/Cart";
+import Location from "./components/Location";
 
 const AppLayout = () => {
   const isCartVisible = useSelector(store => store.cart.isVisible)
+  const isLocationVisible = useSelector(store => store.location.isVisible)
   return (
 
     <div className="app">
       <Header />
       <Outlet />
       {isCartVisible && <Cart />}
+      {isLocationVisible && <Location />}
     </div>
 
 

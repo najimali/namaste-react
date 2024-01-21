@@ -3,7 +3,7 @@ import '../styles/header.css';
 import { DEBOUNCE_DELAYS } from '../utils/constant';
 import logoPath from "../assets/LocalBitesLogo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faContactBook, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleDown, faArrowDown, faCartShopping, faContactBook, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { debounce } from '../utils/debounce';
 import { setText } from '../reducer/searchTextSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,6 +19,7 @@ const Header = () => {
     const debounceSearchText = debounce(() => {
         dispatch(setText(searchTerm))
     }, DEBOUNCE_DELAYS.SEARCH_INPUT);
+    
     useEffect(() => {
         debounceSearchText();
         return () => debounceSearchText.cancel();
@@ -30,11 +31,19 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <Link to="/">
-                    <img src={logoPath} alt="Logo" />
-                </Link>
+                <div>
+                    <Link to="/">
+                        <img src={logoPath} alt="Logo" />
+                    </Link>
+                </div>
 
+                <div className='location'>
+                    
+                    <span>Current Location</span>
+                    <FontAwesomeIcon icon={faArrowDown} />
+                </div>
             </div>
+
             <div className="search-bar">
                 <input
                     type="text"
@@ -51,7 +60,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='nav-items' onClick={handleToggleCart}>
-                    <FontAwesomeIcon className='cart-icon-container' icon={faCartShopping}/>
+                    <FontAwesomeIcon className='cart-icon-container' icon={faCartShopping} />
                     <span className="cart-count">{cartItems?.length || 0}</span>
                 </div>
                 <div className='nav-items'>
