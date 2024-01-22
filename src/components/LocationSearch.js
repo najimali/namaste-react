@@ -8,7 +8,7 @@ import { LOCATION_SUGGESTION_API_END_POINT, DEBOUNCE_DELAYS, ADDRESS_RECOMMEND_A
 import { debounce } from "../utils/debounce"
 import useFetch from "../hooks/useFetch";
 
-const Location = () => {
+const LocationSearch = () => {
     const dispatch = useDispatch()
     const [autoCompleteUrl, setAutoCompleteUrl] = useState(LOCATION_SUGGESTION_API_END_POINT);
     const [addressRecommendUrl, setAddressRecommendUrl] = useState(ADDRESS_RECOMMEND_API_END_POINT)
@@ -66,4 +66,4 @@ const Location = () => {
     )
 }
 
-export default Location
+export default LocationSearch
