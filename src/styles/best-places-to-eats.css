@@ -1,0 +1,42 @@
+.best-places-to-eats {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 80rem;
+    margin: 1rem auto;
+    transition: all 0.3s ease;
+}
+
+.best-places-to-eats .header {
+    color: rgba(2, 6, 12, 0.92);
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: none;
+    padding-left: .1rem;
+}
+
+.best-places-to-eats .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.content .text {
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    width: 18rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 16px;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(2, 6, 12, 0.1);
+    border-radius: 12px;
+    height: auto;
+}
