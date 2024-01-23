@@ -16,19 +16,39 @@
     box-shadow: none;
     padding-left: 1rem;
 }
+.header .scroll-arrow {
+    font-size: 15px;
+    width: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.scroll-arrow .svg-inline--fa{
+    background-color: rgb(247, 244, 244);
+    padding: .5rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-.carousel-container .content {
+.carousel-container .carousel {
     display: flex;
     justify-content: center;
     width: 80rem;
     height: 300px;
     overflow-y: auto;
     padding: 5px;
+    position: relative;
 }
 
-.carousel-container .content::-webkit-scrollbar {
+.carousel-container .carousel::-webkit-scrollbar {
     display: none;
     object-fit: cover;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .carousel-container .image img {
