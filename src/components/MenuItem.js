@@ -1,7 +1,7 @@
 
 import { useDispatch } from "react-redux"
 import "../styles/menu-item.css"
-import { CLOUDINARY__IMAGE_PREFIX, NON_VEG_ICON_IMAGE, VEG_ICON_IMAGE } from "../utils/constant"
+import { CLOUDINARY__IMAGE_PREFIX, DEFAULT_FOOD_IMAGE_URL, NON_VEG_ICON_IMAGE, VEG_ICON_IMAGE } from "../utils/constant"
 import { addItem } from '../reducer/cartSlice'
 
 const MenuItem = ({ detail }) => {
@@ -28,7 +28,7 @@ const MenuItem = ({ detail }) => {
                     <button onClick={handleClickOnAdd}>
                         Add
                     </button>
-                    <img src={`${CLOUDINARY__IMAGE_PREFIX}${imageId}`} alt="Food item" />
+                    <img src={ imageId ? `${CLOUDINARY__IMAGE_PREFIX}${imageId}` : DEFAULT_FOOD_IMAGE_URL} alt="Food item" />
                 </div>
                 <div className="customisable">Customisable</div>
             </div>

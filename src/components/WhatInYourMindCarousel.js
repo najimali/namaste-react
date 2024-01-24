@@ -1,4 +1,4 @@
-import { CLOUDINARY__IMAGE_PREFIX } from "../utils/constant"
+import { CLOUDINARY__IMAGE_PREFIX, DEFAULT_FOOD_IMAGE_URL } from "../utils/constant"
 import "../styles/whats-in-your-mind-carousel.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
@@ -49,7 +49,7 @@ const WhatInYourMindCarousel = ({ data }) => {
                 {slides.map(({ imageId }) => (
                     <div key={imageId}>
                         <div className="image">
-                            <img src={`${CLOUDINARY__IMAGE_PREFIX}${imageId}`}></img>
+                            <img src={imageId ? `${CLOUDINARY__IMAGE_PREFIX}${imageId}` : DEFAULT_FOOD_IMAGE_URL}></img>
                         </div>
                     </div>))}
             </div>

@@ -1,7 +1,7 @@
 
 import { useDispatch, useSelector } from "react-redux"
 import "../styles/cart-item.css"
-import { CLOUDINARY__IMAGE_PREFIX, NON_VEG_ICON_IMAGE, VEG_ICON_IMAGE } from "../utils/constant"
+import { CLOUDINARY__IMAGE_PREFIX, DEFAULT_FOOD_IMAGE_URL } from "../utils/constant"
 import { decreaseQuantity, increaseQuantity } from '../reducer/cartSlice'
 
 const CartItem = ({ detail }) => {
@@ -16,7 +16,7 @@ const CartItem = ({ detail }) => {
     }
     return (
         <div className="cart-item" key={itemId}>
-            <img className="cart-item-image" src={`${CLOUDINARY__IMAGE_PREFIX}${imageId}`} alt="Item Image" />
+            <img className="cart-item-image" src={ imageId ? `${CLOUDINARY__IMAGE_PREFIX}${imageId}` : DEFAULT_FOOD_IMAGE_URL} alt="Item Image" />
             <div className="cart-item-details">
                 <h3 className="cart-item-title">{name}</h3>
                 <div className="cart-item-price">₹ {(price || defaultPrice) / 100}</div>

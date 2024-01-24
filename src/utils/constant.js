@@ -8,6 +8,7 @@ export const SWIGGY_RESTAURANT_API_END_POINT = `https://www.swiggy.com/dapi/rest
 export const SWIGGY_RESTAURANT_DETAIL_API_END_POINT = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=`
 export const LOCATION_SUGGESTION_API_END_POINT = `https://www.swiggy.com/dapi/misc/place-autocomplete?input=`
 export const ADDRESS_RECOMMEND_API_END_POINT = `https://www.swiggy.com/dapi/misc/address-recommend?place_id=`
+export const DEFAULT_FOOD_IMAGE_URL = 'https://play-lh.googleusercontent.com/JA0qswBq-iSo5HbTZyyqAEYEdQ-9JjmkNqxyCqAndO8JzHwKnRSzcGrKdhrshDxw4w=w480-h960-rw'
 export const apiActions = {
     FETCH_DATA: "fetchData",
     SET_DATA: "setData",

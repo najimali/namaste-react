@@ -19,8 +19,6 @@ const Body = () => {
     const bestPlacesToEats = data?.cards[6]
     const bestCusinesNearMe = data?.cards[7]
     const exploreEveryRestaurantsNearMe = data?.cards[8]
-    const [filterRestaurants, setFilteredRestaurants] = useState(null)
-    const searchText = useSelector((store) => store.search.text);
     const currentAddress = useSelector((store) => store.location.address);
     useEffect(() => {
         if (currentAddress?.geometry) {
@@ -29,27 +27,7 @@ const Body = () => {
             setRestaurantUrl(newUrl)
         }
     }, [currentAddress])
-    useEffect(() => {
-        if (restaurants) {
-            setFilteredRestaurants(restaurants)
-        }
-    }, [restaurants])
-    useEffect(() => {
-        if (searchText && restaurants) {
-            const searchTextLowerCase = searchText.toLowerCase()
-            const tempFilteringRestaurants = restaurants.filter(({ info: { name, cuisines } }) => {
-                const cuisinesString = cuisines?.join(",").toLowerCase()
-                return name.toLowerCase().includes(searchText.toLowerCase())
-                    || cuisinesString.includes(searchTextLowerCase)
-            }
 
-            )
-            setFilteredRestaurants(tempFilteringRestaurants)
-        }
-        else {
-            setFilteredRestaurants(restaurants)
-        }
-    }, [searchText])
     return (
         <div className="body">
             <WhatInYourMindCarousel
@@ -60,7 +38,7 @@ const Body = () => {
             />
             <RestaurantContainer
                 title={title}
-                data={filterRestaurants}
+                data={restaurants}
             />
             <BestPlacesToEats
                 data={bestPlacesToEats}
